@@ -98,10 +98,6 @@ while True:
         var2=False
         selection=selection+1
         d.blit(background,(0,0))
-    if f==False and var3==True:
-        var3=False
-        gameit=files[selection-1]
-        run=__import__(gameit)
     if var==False and l!=False:
         var=True
     if var2==False and r!=False:
@@ -123,8 +119,16 @@ while True:
                 gameit=files[selection-1]
                 try:
                     run=__import__(gameit)
-                except ImportError:
+                except:
                     quit()
+    #controller commands
+    if f==False and var3==True:
+        var3=False
+        gameit=files[selection-1]
+	try:
+       	    run=__import__(gameit)
+	except ImportError:
+            quit()
 
     if selection<1:
         selection=len(files)
