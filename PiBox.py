@@ -53,7 +53,7 @@ var2=False
 var3=False
 background.fill((0,250,0))
 ##Edit Image Name Here##
-backer=pygame.image.load('/home/pi/PiBoxBackground.jpg')
+backer=pygame.image.load('/home/pi/PiBox/PiBoxBackground.jpg')
 backer=pygame.transform.scale(backer,(width,height))
 background.blit(backer,(0,0))
 d.blit(background,(0,0))
