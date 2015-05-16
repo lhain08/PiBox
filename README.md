@@ -6,3 +6,5 @@ http://www.instructables.com/id/Simple-Handheld-controller-for-Raspberry-Pi/
 
 Background image found on this forum:
 https://www.raspberrypi.org/forums/viewtopic.php?f=8&t=1178
+
+Run by entering "sudo python /home/pi/PiBox/PiBox.py" into a terminal session
