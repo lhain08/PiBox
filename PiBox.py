@@ -98,12 +98,6 @@ while True:
         var2=False
         selection=selection+1
         d.blit(background,(0,0))
-    if selection<1:
-        selection=len(files)
-        xer=height/2
-    if selection>len(files):
-        selection=1
-        xer=height/2
     if f==False and var3==True:
         var3=False
         gameit=files[selection-1]
@@ -114,5 +108,29 @@ while True:
         var2=True
     if var3==False and f!=False:
         var3=True
+
+    #keyboard commands
+    for event in pygame.event.get():
+        if event.type==QUIT:
+            pygame.quit()
+            quit()
+        if event.type==KEYDOWN:
+            if event.key==K_UP or event.key==K_w:
+                selection=selection-1
+            if event.key==K_DOWN or event.key==K_s:
+                selection=selection+1
+            if event.key==K_RETURN:
+                gameit=files[selection-1]
+                try:
+                    run=__import__(gameit)
+                except ImportError:
+                    quit()
+
+    if selection<1:
+        selection=len(files)
+        xer=height/2
+    if selection>len(files):
+        selection=1
+        xer=height/2
 
 
